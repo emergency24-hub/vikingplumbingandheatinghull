@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vikingplumbingandheatinghull.co.uk/sitemap.xml

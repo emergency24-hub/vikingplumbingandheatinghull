@@ -2,7 +2,7 @@
 const COMPANY = {
   name: 'Viking Plumbing And Heating Hull Ltd',
   phone: '07520 659236', // UK format; the clickable +44 number is generated automatically.
-  email: 'info@vikingplumbingandheatinghull.co.uk', // Temporary: replace with the confirmed mailbox.
+  email: 'info@vikingplumbingandheatinghull.co.uk',
   address: 'Flat 9 St James Court, Lock Keepers Court, Hull, England, HU9 1RF',
   companyNumber: '17450472',
   shortName: 'Viking',
@@ -57,3 +57,20 @@ document.querySelectorAll('nav a').forEach(link => link.addEventListener('click'
   menu.setAttribute('aria-label','Open menu');
 }));
 document.getElementById('year').textContent = new Date().getFullYear();
+
+// Search and social metadata stay aligned with shared company contact settings.
+const SEO_PAGES = {"index.html":{"title":"Plumber & Heating Services in Hull | Viking Plumbing","description":"Plumbing, heating repairs and bathroom plumbing in Hull and East Yorkshire. Call Viking Plumbing And Heating Hull Ltd on 07520 659236 to book."}};
+const pageFile = location.pathname.split('/').pop() || 'index.html';
+const pageSEO = SEO_PAGES[pageFile] || SEO_PAGES['index.html'];
+document.title = pageSEO.title;
+document.querySelector('meta[name="description"]').content = pageSEO.description;
+const structuredData = document.getElementById('business-schema');
+if (structuredData) {
+ const schema = JSON.parse(structuredData.textContent);
+ const business = schema['@graph'].find(item => item['@type'] === 'Plumber');
+ business.name = COMPANY.name;
+ business.telephone = COMPANY.phone.replace(/[^+\d]/g, '').replace(/^0/, '+44');
+ business.email = COMPANY.email;
+ business.identifier.value = COMPANY.companyNumber;
+ structuredData.textContent = JSON.stringify(schema);
+}

@@ -1,0 +1,9 @@
+Website domain: https://vikingplumbingandheatinghull.co.uk
+
+Added: logo-derived favicon ICO and PNG files, Apple touch icon, web manifest, unique titles and descriptions, canonical URLs, social preview metadata, Plumber and WebSite structured data, service/breadcrumb markup where applicable, robots.txt and sitemap.xml.
+
+Deploy the complete package to the domain above. If the final domain or URL structure changes, update canonical URLs, structured-data URLs, social-image URLs, robots.txt and sitemap.xml.
+
+Submit https://vikingplumbingandheatinghull.co.uk/sitemap.xml in Google Search Console after launch. This package does not submit or verify Search Console and does not change hosting redirects. Configure redirects from previous URLs to their corresponding new pages in your hosting, and redirect alternate hostnames to the selected domain.
+
+The business contact settings remain at the top of script.js. Visible contact details and business JSON-LD update from these settings; static HTML fallbacks should also be kept in sync when business details change.
